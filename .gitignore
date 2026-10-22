@@ -17,3 +17,8 @@ web/.vercel/
 .vercel/
 
 samples/demo_easy*
+
+*.tsbuildinfo
+
+.vercel
+.env*
