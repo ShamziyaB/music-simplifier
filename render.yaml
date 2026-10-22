@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: music-simplifier-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: MAX_FILE_BYTES
+        value: "8388608"
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: ALLOWED_ORIGIN_REGEX
+        value: 'https://.*\.vercel\.app'
